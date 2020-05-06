@@ -63,10 +63,20 @@ neardev
 ```
 
 _Using Gitpod?_
-- Find and replace all instances of `<???>` on this page for a smooth workflow
+
+Try the command `tree ~/.near-credentials/` to see your credentials
+
+```
+/home/gitpod/.near-credentials/
+└── default
+    └── <???>.testnet.json
+```
 
 
 ### Explore the account state
+
+_Using Gitpod?_
+- Find and replace all instances of `<???>` on this page for a smooth workflow
 
 _(These steps explore publicly available information for all accounts. We included them **after** login in case you just created a **new** account for yourself)_
 
@@ -163,7 +173,7 @@ When working with contracts, you will create sub-accounts on your main account. 
 Let's create a new account that is controlled your main account. But let's do this in the context of deploying a contract
 
 ```bash
-near create_account greeting.<???>.testnet --masterAccount <???>.testnet --helperUrl https://helper.near.org
+near create_account greeting.<???>.testnet --master-account <???>.testnet --helper-url https://helper.near.org
 ```
 
 ### Deploy and test a contract
@@ -185,7 +195,7 @@ near deploy --wasm-file out/greeting.wasm --account-id greeting.<???>.testnet
 **Finally test** one of the contract methods: `sayMyName()`
 
 ```text
-near call greeting.<???>.testnet sayMyName --accountId <???>.testnet
+near call greeting.<???>.testnet sayMyName --account-id <???>.testnet
 ```
 
 _Expected outcome_
