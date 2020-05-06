@@ -4,8 +4,10 @@
 
 This workshop includes several activities:
 
-- a **client-side playground** to better understand how `near-api-js` works
-- a **console-based challenge** to practice using NEAR Shell to manage keys, create accounts and deploy contracts
+- a [**client-side playground**](#activityclient-side-playground) to better understand how `near-api-js` works
+- a [**console-based challenge**](#activityhello-near-shell) to practice using NEAR Shell to manage keys, create accounts and deploy contracts
+
+You will find the companion slides here: [Hello, NEAR APIs!](https://docs.google.com/presentation/d/1hD643Pfg4moFUBFNpAyiMJe2oFYQQuBjKAHg2Rq41kQ)
 
 **Prerequisites**
 
