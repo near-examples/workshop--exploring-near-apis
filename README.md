@@ -8,11 +8,15 @@ This workshop includes several activities:
 - a [**console-based challenge**](#activityhello-near-shell) to practice using NEAR Shell to manage keys, create accounts and deploy contracts
 - a [**monitoring challenge**](#activityrealtime-dapp-monitoring-hack) to apply lessons about `near-api-js` and `JSON RPC API` into a single interface
 
-You will find the companion slides here: [Hello, NEAR APIs!](https://docs.google.com/presentation/d/1hD643Pfg4moFUBFNpAyiMJe2oFYQQuBjKAHg2Rq41kQ)
-
 **Prerequisites**
 
 If you're already comfortable with JavaScript, the command line and JSON RPC APIs then this should be a breeze. If you're unfamiliar with the NEAR APIs and have limited or no experience with our network then this workshop will be very helpful. If you have no programming experience then this workshop will be challenging for you -- find someone to pair with so you can stay motivated and productive.
+
+**Companion Presentation**
+
+This hands-on workshop is paired with a presentation called [Hello, NEAR APIs](https://docs.google.com/presentation/d/1hD643Pfg4moFUBFNpAyiMJe2oFYQQuBjKAHg2Rq41kQ) which helps set the context for this work and clarifies a few key mental models.
+
+Before diving into this workshop, have a look at the slides linked above.
 
 **Orientation**
 
