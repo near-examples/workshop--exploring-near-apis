@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Connecting to the NEAR platform</title>
+    <!-- to connect to the NEAR platform, include a reference to near-api-js -->
+    <script src="https://cdn.jsdelivr.net/npm/near-api-js@0.23.2/dist/near-api-js.min.js"></script>
+    <script>
+      // configure network settings and key storage
+      const config = {
+        networkId: "default", // this can be any label to namespace user accounts
+        nodeUrl: "https://rpc.testnet.nearprotocol.com", // this endpoint must point to the network you want to reach
+        walletUrl: "http://wallet.testnet.nearprotocol.com", // this endpoint must exist for the wallet to work
+        deps: {
+          keyStore: new nearApi.keyStores.BrowserLocalStorageKeyStore(), // keys are stored as plaintext in LocalStorage
+        },
+      };
+
+      // open a connection to the NEAR platform
+      (async function () {
+        window.near = await nearApi.connect(config); // connect to the NEAR platform
+        window.wallet = new nearApi.WalletAccount(window.near); // instantiate a new wallet
+
+        // ---------------------------------------------------------------------------
+        // here you have access to `near-api-js` and a valid connection object `near`
+        //
+        // we've added them to the window object to make working in the console convenient
+        // ---------------------------------------------------------------------------
+      })(window);
+    </script>
+  </head>
+  <body>
+    <h2><code>near-api-js</code> client-side challenge</h2>
+
+    To run through this demo you will need to open your
+    <a href="https://javascript.info/devtools">JavaScript Developer Console</a
+    ><br />
+    <strong>(Press Cmd+Opt+J or, if you’re on Windows, then F12)</strong>
+
+    <blockquote>
+      <em>
+        "There are two ways to write error-free programs; only the third one
+        works."<br />
+        (Alan J. Perlis)
+      </em>
+    </blockquote>
+  </body>
+</html>
