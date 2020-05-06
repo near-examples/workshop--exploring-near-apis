@@ -6,6 +6,7 @@ This workshop includes several activities:
 
 - a [**client-side playground**](#activityclient-side-playground) to better understand how `near-api-js` works
 - a [**console-based challenge**](#activityhello-near-shell) to practice using NEAR Shell to manage keys, create accounts and deploy contracts
+- a [**monitoring challenge**](#activityrealtime-dapp-monitoring-hack) to apply lessons about `near-api-js` and `JSON RPC API` into a single interface
 
 You will find the companion slides here: [Hello, NEAR APIs!](https://docs.google.com/presentation/d/1hD643Pfg4moFUBFNpAyiMJe2oFYQQuBjKAHg2Rq41kQ)
 
@@ -138,6 +139,16 @@ _You can read [more about accounts here](https://docs.nearprotocol.com/docs/conc
 > Keep your own notes. Time permitting, we will share and discuss your findings and answer questions at the end of the activity.
 
 NEAR Shell serves as a console Swiss army knife with the ability to manage accounts, contracts and more. This challenge walks through installing NEAR Shell before using it to create accounts, deploy contracts and test them on the network.
+
+## Activity::Realtime dApp Monitoring Hack
+
+> **_Instructions_**
+>
+> Open the [challenge page](challenges/realtime-monitoring-of-dapps.md) and step through the instructions
+>
+> Keep your own notes. Time permitting, we will share and discuss your findings and answer questions at the end of the activity.
+
+NEAR's JSON RPC API provides a number of methods that make it easy for developers to query the network. Combining these methods with the `watch` command lets us refresh at regular intervals and create a realtime monitor for our dApps
 
 ## Getting Help
 
