@@ -131,7 +131,7 @@ _You can read [more about accounts here](https://docs.nearprotocol.com/docs/conc
 
 > **_Instructions_**
 >
-> Open the [challenge page](challenges/managing-keys-with-near-shell) and step through the instructions
+> Open the [challenge page](challenges/managing-keys-with-near-shell.md) and step through the instructions
 >
 > Keep your own notes. Time permitting, we will share and discuss your findings and answer questions at the end of the activity.
 
