@@ -14,7 +14,11 @@ Note that the pattern `<???>` is meant to represent the unique portion of your a
 
 ## Manage a single account
 
-Visit the [documentation for NEAR Shell](https://docs.near.org/docs/development/near-clitool) and install it locally. If you're using Gitpod, this step is already done for you.
+Visit the [documentation for NEAR Shell](https://docs.near.org/docs/development/near-clitool) and install it locally.
+
+_Using Gitpod?_
+
+- This step is already done for you. You can jump to logging in.
 
 ```sh
 npm i -g near-shell
@@ -22,7 +26,11 @@ npm i -g near-shell
 
 ### Login using NEAR Shell
 
-Login with NEAR Shell to authorize it for `FullAccess` use with a new or existing NEAR account
+Login with NEAR Shell to authorize it for `FullAccess` use with a new or existing NEAR account. You must create an account in this step if you don't already have one
+
+_Using Gitpod?_
+
+- Click **Open Preview** button (will appear in the middle of 3 blue buttons)
 
 ```sh
 near login
@@ -53,6 +61,10 @@ neardev
 └── default
     └── <???>.testnet.json
 ```
+
+_Using Gitpod?_
+- Find and replace all instances of `<???>` on this page for a smooth workflow
+
 
 ### Explore the account state
 
