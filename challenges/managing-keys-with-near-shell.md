@@ -4,14 +4,13 @@ In this challenge you will authorize NEAR Shell to use to your (new or existing)
 
 Note that the pattern `<???>` is meant to represent the unique portion of your account name on the NEAR network to make this challenge easier to follow.
 
-- [Challenge: Managing keys with NEAR Shell](#challenge-managing-keys-with-near-shell)
-  - [Manage a single account](#manage-a-single-account)
-    - [Login using NEAR Shell](#login-using-near-shell)
-    - [Explore the account state](#explore-the-account-state)
-    - [Explore the account access keys](#explore-the-account-access-keys)
-  - [Manage sub-accounts](#manage-sub-accounts)
-    - [Create a sub account](#create-a-sub-account)
-    - [Deploy and test a contract](#deploy-and-test-a-contract)
+- [Manage a single account](#manage-a-single-account)
+  - [Login using NEAR Shell](#login-using-near-shell)
+  - [Explore the account state](#explore-the-account-state)
+  - [Explore the account access keys](#explore-the-account-access-keys)
+- [Manage sub-accounts](#manage-sub-accounts)
+  - [Create a sub account](#create-a-sub-account)
+  - [Deploy and test a contract](#deploy-and-test-a-contract)
 
 ## Manage a single account
 
