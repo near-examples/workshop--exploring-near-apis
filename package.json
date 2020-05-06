@@ -1,0 +1,25 @@
+{
+  "name": "workshop--exploring-assemblyscript-contracts",
+  "version": "0.0.1",
+  "description": "Learn to develop contracts for NEAR Protocol using AssemblyScript",
+  "author": "Near, Inc. <hello@near.org>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn build:contract",
+    "build:contract": "node ./contracts/compile.js",
+    "clean": "rm -rf ./out",
+    "test": "yarn test:unit",
+    "test:all": "yarn test && yarn test:simulate:runtime",
+    "test:unit": "asp --verbose --nologo -c contracts/as-pect.config.js -f unit.spec",
+    "test:simulate:runtime": "jest --verbose -f simulate.spec"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.9.4",
+    "jest": "^25.5.4",
+    "near-sdk-as": "^0.3.2",
+    "near-shell": "^0.22.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
