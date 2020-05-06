@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+import sys
+import hashlib
+import base58
+
+def generate_code_hash_from(contract): 
+    with open(contract, 'rb') as file:
+        checksum = hashlib.sha256(file.read())
+    print(base58.b58encode(checksum.digest()).decode('utf-8'))
+
+for file in sys.stdin:
+    contract = file.rstrip()
+    generate_code_hash_from(contract)

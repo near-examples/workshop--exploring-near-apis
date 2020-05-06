@@ -1,0 +1,42 @@
+#!/usr/bin/env node
+
+const ENCODINGS = [
+  "ascii", // For 7 bit ASCII data only. This encoding method is very fast, and will strip the high bit if set.
+  "base64", // An efficient (power of 2) and safe (over the wire) encoding format used to move data around the interwebs
+  "binary", // A way of encoding raw binary data into strings by using only the first 8 bits of each character.
+  "ucs2", // 2-bytes, little endian encoded Unicode characters. It can encode only BMP(Basic Multilingual Plane, U+0000 - U+FFFF).
+  "utf8", // Multi byte encoded Unicode characters. Many web pages and other document formats use UTF-8.
+];
+
+const USAGE = `
+Transcode (tc) is a small utility program to encode / decode among formats.
+It accepts input via stdin for shell pipelining.
+
+usage:
+
+  [INPUT]         | tc <source> <target>
+  echo "U1RBVEU=" | tc base64 utf8  # should print the word "STATE"
+
+  supported formats: \n\n\t${ENCODINGS.join("\n\t")}
+`;
+
+let [source, target] = process.argv.slice(2);
+
+if (!ENCODINGS.includes(source) || !ENCODINGS.includes(target)) {
+  console.log(USAGE);
+  process.exit(1);
+} else {
+  let data = "";
+
+  process.stdin.on("readable", () => {
+    let chunk;
+    while ((chunk = process.stdin.read()) !== null) {
+      data += chunk;
+    }
+  });
+
+  process.stdin.on("end", () => {
+    const utf8 = Buffer.from(data, source).toString(target);
+    console.log(utf8);
+  });
+}

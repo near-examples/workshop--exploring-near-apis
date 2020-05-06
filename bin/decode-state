@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+
+// https://stackoverflow.com/a/6182519
+
+const fs = require("fs");
+
+const FILTER = false;
+const FILTER_IN_KEYS = [];
+
+const FILTER_OUT_KEYS = [
+  "block_index_seeded_at",
+  "random_buffer_index_key",
+  "random_buffer_key",
+];
+
+let rpcResponse = "";
+
+process.stdin.on("readable", () => {
+  let chunk;
+  // Use a loop to make sure we read all available data.
+  while ((chunk = process.stdin.read()) !== null) {
+    rpcResponse += chunk;
+  }
+});
+
+process.stdin.on("end", () => {
+  const json = JSON.parse(rpcResponse);
+  console.log(JSON.stringify(decode(json), null, 2));
+  // console.log(JSON.stringify(decode(json)))
+});
+
+function decode(json) {
+  if (json.result && json.result.error) throw new Error(json.result.error);
+
+  if (!json.result.values) return json.result;
+
+  return filter(json.result).map((entry) => {
+    entry.key = decodeText(entry.key);
+    // if (entry.key === "STATE") {
+    //   console.log("contract: ", entry.value);
+    //   writeFile(entry.value);
+    // }
+
+    try {
+      entry.value = JSON.parse(decodeText(entry.value));
+    } catch (e) {
+      entry.value = decodeText(entry.value);
+    }
+
+    return entry;
+  });
+}
+
+function decodeText(base64Text) {
+  const result = Buffer.from(base64Text, "base64").toString("utf-8");
+  // console.log(result)
+  return result.toString();
+}
+
+function filter(result) {
+  if (!FILTER) return result.values;
+
+  return result.values.filter(
+    (entry) =>
+      FILTER_IN_KEYS.includes(decodeText(entry.key)) &&
+      !FILTER_OUT_KEYS.includes(decodeText(entry.key))
+  );
+}
+
+// function writeFile(base64Text) {
+//   const buffer = Buffer.from(base64Text, "base64");
+//   fs.writeFileSync("./contract.wasm", "binary", buffer);
+// }

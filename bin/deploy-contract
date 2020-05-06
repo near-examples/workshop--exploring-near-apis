@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# cat contracts/greeting.wasm | base64 | shasum -a 256
+
+set -e
+
+# command line ares
+# deploy <master account> <contract file> <near network>
+master=$1
+filepath=$2
+network=$3
+
+if [[ $# -ne 3 ]]; then
+    echo "usage"
+    echo "deploy <master account> <contract file> <near network>"
+    exit 1
+fi
+
+file=$(basename -- "$2")
+filename="${file%.*}"
+extension="${file##*.}"
+
+# countract account is derived from filename
+contract=$filename
+new_account=$contract.$master.$network
+
+# master account is the developer account being used to manage the contract
+master_account=$master.$network
+
+# create the new account for the contract
+echo "Creating account [ $new_account ] for $contract"
+near create_account $new_account --masterAccount $master_account --helperUrl https://helper.near.org
+
+# deploy the contract
+echo "Deploying contract [ $contract ] to $new_account"
+near deploy --wasm-file $filepath --accountId $new_account
+
+# verify deployment
+echo "Verifying deployment"
+near state $new_account
+
+exit 0%
