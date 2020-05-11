@@ -29,11 +29,11 @@ master_account=$master.$network
 
 # create the new account for the contract
 echo "Creating account [ $new_account ] for $contract"
-near create_account $new_account --masterAccount $master_account --helperUrl https://helper.near.org
+near create_account $new_account --master-account $master_account --helper-url https://helper.testnet.near.org
 
 # deploy the contract
 echo "Deploying contract [ $contract ] to $new_account"
-near deploy --wasm-file $filepath --accountId $new_account
+near deploy --wasm-file $filepath --account-id $new_account
 
 # verify deployment
 echo "Verifying deployment"

@@ -8,8 +8,8 @@
       // configure network settings and key storage
       const config = {
         networkId: "default", // this can be any label to namespace user accounts
-        nodeUrl: "https://rpc.testnet.nearprotocol.com", // this endpoint must point to the network you want to reach
-        walletUrl: "http://wallet.testnet.nearprotocol.com", // this endpoint must exist for the wallet to work
+        nodeUrl: "https://rpc.testnet.near.org", // this endpoint must point to the network you want to reach
+        walletUrl: "http://wallet.testnet.near.org", // this endpoint must exist for the wallet to work
         deps: {
           keyStore: new nearApi.keyStores.BrowserLocalStorageKeyStore(), // keys are stored as plaintext in LocalStorage
         },

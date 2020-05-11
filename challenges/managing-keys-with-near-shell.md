@@ -173,7 +173,7 @@ When working with contracts, you will create sub-accounts on your main account. 
 Let's create a new account that is controlled your main account. But let's do this in the context of deploying a contract
 
 ```bash
-near create_account greeting.<???>.testnet --master-account <???>.testnet --helper-url https://helper.near.org
+near create_account greeting.<???>.testnet --master-account <???>.testnet --helper-url https://helper.testnet.near.org
 ```
 
 ### Deploy and test a contract

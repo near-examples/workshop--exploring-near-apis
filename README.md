@@ -1,4 +1,4 @@
-![Near, Inc. logo](https://nearprotocol.com/wp-content/themes/near-19/assets/img/logo.svg?t=1553011311)
+![Near, Inc. logo](https://near.org/wp-content/themes/near-19/assets/img/logo.svg?t=1553011311)
 
 # NEAR Protocol Workshop :: Exploring NEAR Protocol APIs
 
@@ -111,7 +111,7 @@ A few points are worth noting early about how accounts work on NEAR since they'r
     - An account **with** a contract will report a `code_hash` of some value that is unique to the compiled `.wasm` of that contract
     - Subsequent deployments overwrite contract code _without_ affecting storage (except for the `STATE` key which holds the contract code)
 
-_You can read [more about accounts here](https://docs.nearprotocol.com/docs/concepts/account)_
+_You can read [more about accounts here](https://docs.near.org/docs/concepts/account)_
 
 ## Contracts
 
@@ -120,9 +120,9 @@ _You can read [more about accounts here](https://docs.nearprotocol.com/docs/conc
   - For a family of contracts, account names can be scoped as `contract1.myapp`, `contract2.myapp`
 
 - To call methods on deployed contracts we have a choice of tools and interfaces
-  - RPC ([see here](https://docs.nearprotocol.com/docs/interaction/rpc))
+  - RPC ([see here](https://docs.near.org/docs/interaction/rpc))
   - `near-api-js` ([see here](https://near.github.io/near-api-js/classes/_account_.account.html#functioncall))
-  - `NEAR Shell` ([see here](https://docs.nearprotocol.com/docs/development/near-clitool))
+  - `NEAR Shell` ([see here](https://docs.near.org/docs/development/near-clitool))
 
 ## Activity::Client-Side Playground
 
