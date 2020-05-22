@@ -56,7 +56,7 @@ yarn build greeting
 
 - `yarn test:all` runs all tests for all contracts
 - `yarn test:unit` runs only unit tests for all contracts
-- `yarn test:simulate:runtime` runs only simulation tests for all contracts (**make sure** to run `yarn build` first)
+- `yarn test:simulate:runtime` runs only simulation tests for all contracts
 
 You can filter any of the **unit tests** by a specific contract name by appending `-f <contract name>` to the command above, for example
 
