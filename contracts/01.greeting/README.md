@@ -407,7 +407,7 @@ Account greeting.<???>.testnet
 **Test `showYouKnow()`**
 
 ```text
-near view greeting.<???>.testnet showYouKnow --account-id <???>.testnet
+near view greeting.<???>.testnet showYouKnow
 ```
 
 _Expected outcome_
@@ -421,7 +421,7 @@ false
 **Test `sayHello()`**
 
 ```text
-near view greeting.<???>.testnet sayHello --account-id <???>.testnet
+near view greeting.<???>.testnet sayHello
 ```
 
 _Expected outcome_
