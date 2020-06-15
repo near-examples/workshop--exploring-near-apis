@@ -25,7 +25,6 @@ function compileContract(fqPath) {
     [
       "-O3z",
       "--debug", // Shows debug output
-      "--validate", // Validate the generated wasm module
       "--measure", // shows compiler run time
       "--runPasses",
       "inlining-optimizing,dce", // inlines to optimize and removes deadcode
@@ -53,7 +52,7 @@ function scanProjects() {
 
 function reportFilesize(fqPath) {
   const stats = fs.statSync(fqPath);
-  console.log(`Filesize  : ${stats.size / 1000.0} kb`);
+  console.log(`Filesize   :    ${stats.size / 1000.0} kb`);
 }
 
 /**
