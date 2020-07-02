@@ -14,9 +14,9 @@ describe("cross contract calls", () => {
     words = runtime.newAccount("words.examples", wordsWasm);
   });
 
-  function addWord(hello) {
+  function addWord(text) {
     return alice.call_other("sentences", "SetWord", {
-      word: { text: "hello" },
+      word: { text },
     });
   }
 
