@@ -101,7 +101,7 @@ A few points are worth noting early about how accounts work on NEAR since they'r
   - Account names follow a DNS naming pattern segmented by periods (`.`)
     - Account IDs have a minimum length of 2 characters
     - NEAR deducts a recurrent tax from the account balance for short account IDs (up to 10 characters) with an exponentially decreasing rate based on length.
-    - All accounts on a specific network end in the name of the network (ie. one of `mainnet`, `testnet`, `betanet`, `devnet`)
+    - All accounts on a specific network end in the name of the network (ie. one of `mainnet`, `testnet`, `betanet`)
     - It is reasonable to create your user account as `username.testnet` and deploy contracts as sub-accounts (`guestbook.username.testnet`, `v2.guestbook.username.testnet`, etc)
   - Accounts maintain their own storage
     - Storage includes the account name, contract code (if a contract is deployed to the account) and any state storage
