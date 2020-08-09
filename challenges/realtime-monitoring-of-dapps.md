@@ -54,6 +54,8 @@ MY_ACCOUNT=#<your new account>
 CONTRACT_ACCOUNT=#<contract account>
 ```
 
+> NOTE: CONTRACT_ACCOUNT is a temporary developer account created automatcally by running ```yarn dev``` and is formated like this ```dev-1596999040933-3413953```
+
 And then use them in the following `watch` command (it refreshes twice per second and colorizes the changes between refreshes)
 
 ```
