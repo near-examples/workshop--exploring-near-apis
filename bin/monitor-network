@@ -1,0 +1,67 @@
+starting with the Guestbook demo
+
+0. make sure the guestbook is open in preview mode
+1. open 2 new terminals (A) and (B) and arrange them side-by-side just above the bottom terminal, replacing the README (3 terminals all together)
+2. brew install httpie (takes some time)
+3. npm i -g near-shell
+
+**to view metadata for contract and account**
+
+in terminal (A)
+
+```sh
+MY_ACCOUNT=#<your new account>
+CONTRACT_ACCOUNT=#<contract account>
+```
+
+```
+watch -d -c -n .5 "near state $MY_ACCOUNT; near state $CONTRACT_ACCOUNT"
+```
+
+**to view detailed contract state**
+
+in terminal (B)
+
+```sh
+CONTRACT_ACCOUNT=#<contract account>
+```
+
+```sh
+watch -d -c -n .5 "http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=query params:='{\"request_type\": \"view_state\", \"finality\": \"final\", \"account_id\": \"$CONTRACT_ACCOUNT\", \"prefix_base64\": \"\"}' | jq --color-output '.'"
+```
+
+<!-- watch -d -c -n .5 "near state greeting.amgando.testnet; near state amgando.testnet"
+
+
+watch -d -c -n .5 "near state $MY_ACCOUNT; near state $CONTRACT_ACCOUNT"
+
+
+
+watch -d -c -n .5 echo hello; echo goodbye
+
+
+
+# colorized chunks
+http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=block params:='{"finality": "final"}'
+
+watch -d -c -n .5 "http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=block params:='{\"finality\": \"final\"}' | jq --color-output '.result.chunks'"
+
+
+watch -d -c -n .5 "http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=query params:='{\"request_type\": \"view_state\", \"finality\": \"final\", \"account_id\": \"$ACCOUNT\", \"prefix_base64\": \"\"}' | jq --color-output"
+
+watch -d -c -n .5 "http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=query params:='{\"request_type\": \"view_state\", \"finality\": \"final\", \"account_id\": \"dev-1588684583975\", \"prefix_base64\": \"\"}' | jq --color-output"
+
+# get contract state
+http post https://rpc.near.org jsonrpc=2.0 method=query id=123 params:='["contract/new-corgis", ""]'
+
+http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=query \
+  params:='{
+    "request_type": "view_state",
+    "finality": "final",
+    "account_id": "new-corgis",
+    "prefix_base64": "U1RBVEU="
+  }'
+
+
+
+watch -d -c -n .5 "http post https://rpc.testnet.near.org jsonrpc=2.0 id=dontcare method=query params:='{\"request_type\": \"view_state\", \"finality\": \"final\", \"account_id\": \"$ACCOUNT\", \"prefix_base64\": \"\"}' | jq --color-output '.'" -->

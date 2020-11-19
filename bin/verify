@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+set -e
+
+# command line ares
+# verify <wasm file> <code hash>
+wasm_file=$1
+code_hash=$2
+
+if [[ $# -ne 2 ]]; then
+    echo "usage"
+    echo "verify <wasm file> <code hash>"
+    exit 1
+fi
+
+# code_hash=Cy5sM6J7NPWGX423q6kS8iqywpitYzj5amw3KAiPL9vf
+# shasum_with_check=$(echo -n $code_hash | python3 -m base58 -d | xxd -p)
+# shasum=${shasum_with_check%$'\n'}
+
+# y=(${shasum_with_check//$'\n'/ })
+# echo $y[0]
+
+# echo $shasum
+# openssl sha256 out/words.wasm
+# b1ce95f7a5aa554902eabe213fc4f2720a811386fb872c7ab3cd96babb316780
+
+
+cat out/words.wasm | shasum -a 256
+cat out/words.wasm | openssl dgst -sha256
+echo -n `openssl sha256 out/words.wasm`
+shasum=b1ce95f7a5aa554902eabe213fc4f2720a811386fb872c7ab3cd96babb316780
+shasum=b1ce95f7a5aa554902eabe213fc4f2720a811386fb872c7ab3cd96babb316780
+echo $shasum
+shasum -a 256 -c <<< "${shasum} *${wasm_file}"
+
+openssl sha256 out/words.wasm

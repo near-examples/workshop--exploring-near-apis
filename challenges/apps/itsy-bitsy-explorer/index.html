@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEAR Protocol JSON RPC API</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <script src="index.js"></script>
+</head>
+
+<body>
+
+  <div class="container is-fluid">
+    <section class="section">
+      <div class="container">
+        <div class="columns is-multiline">
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="box">
+              <div class="media">
+                <div class="media-left">
+                  <span class="icon">
+                    <i class="fas fa-cube fa-2x"></i>
+                  </span>
+                </div>
+                <div class="media-content has-text-right">
+                  <h3 class="title is-1 has-text-info"><span id="blocks"></span></h3>
+                </div>
+              </div>
+              <h4 class="title">Blocks</h4>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="box">
+              <div class="media">
+                <div class="media-left">
+                  <i class="fas fa-users fa-2x"></i>
+                </div>
+                <div class="media-content has-text-right">
+                  <h3 class="title is-1 has-text-danger"><span id="validators"></span></h3>
+                </div>
+              </div>
+              <h4 class="title">Validators</h4>
+            </div>
+          </div>
+          <div class="column is-6-tablet is-3-desktop">
+            <div class="box">
+              <div class="media">
+                <div class="media-left">
+                  <i class="fas fa-link fa-2x"></i>
+                </div>
+                <div class="media-content has-text-right">
+                  <h3 class="title is-1 has-text-success"><span id="chain_id"></span></h3>
+                </div>
+              </div>
+              <h4 class="title"><span id="version"></span> - <span id="build"></span></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="control">
+    <div class="select">
+      <select id="rpc-method">
+        <option>Select dropdown</option>
+        <option value="status">status</option>
+        <option value="block">block</option>
+        <option value="chunk">chunk</option>
+        <option value="validators">validators</option>
+        <option value="gas_price">gas_price</option>
+      </select>
+    </div>
+  </div>
+  <pre>
+    <code class="json" id="response"></code>
+  </pre>
+</body>
+
+</html>
