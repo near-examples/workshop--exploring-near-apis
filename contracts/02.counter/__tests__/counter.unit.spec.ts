@@ -3,9 +3,9 @@ import {
   resetCounter,
   incrementCounter,
   decrementCounter,
-} from "../main";
+} from "../assembly";
 
-import { context, storage, VM, Context as VMContext } from "near-sdk-as";
+import { context, storage, VM, VMContext } from "near-sdk-as";
 
 describe("02. Counter ", () => {
   beforeEach(() => {

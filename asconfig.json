@@ -1,0 +1,10 @@
+{
+  "workspaces": [
+    "contracts/01.greeting",
+    "contracts/02.counter",
+    "contracts/03.guestbook",
+    "contracts/04.cross-contract-calls/assembly/sentences",
+    "contracts/04.cross-contract-calls/assembly/words"
+  ],
+  "outDir": "./out"
+}

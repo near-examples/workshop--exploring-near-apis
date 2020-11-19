@@ -1,8 +1,11 @@
-const { Runtime, encodeBs64 } = require("near-sdk-as/runtime");
+const {
+  Runtime,
+  encodeBs64
+} = require("near-sdk-simulator");
 const path = require("path");
 
-const sentencesWasm = path.join(__dirname, "/../../../out/sentences.wasm");
-const wordsWasm = path.join(__dirname, "/../../../out/words.wasm");
+const sentencesWasm = path.join(__dirname, "/../../../out/debug/sentences.wasm");
+const wordsWasm = path.join(__dirname, "/../../../out/debug/words.wasm");
 
 let runtime, alice, sentences, words;
 
@@ -16,7 +19,9 @@ describe("cross contract calls", () => {
 
   function addWord(text) {
     return alice.call_other("sentences", "SetWord", {
-      word: { text },
+      word: {
+        text
+      },
     });
   }
 
@@ -52,10 +57,17 @@ describe("cross contract calls", () => {
   });
 
   test("setting state", () => {
-    let state = { word: { lang: "en-us", text: "hello" } };
+    let state = {
+      word: {
+        lang: "en-us",
+        text: "hello"
+      }
+    };
     sentences.state = state;
     sentences.reset();
-    let { result } = addWord("hello");
+    let {
+      result
+    } = addWord("hello");
     expect(result.state).toStrictEqual(state);
   });
 });

@@ -1,5 +1,5 @@
-import { reverseWordOne, reverseWordTwo, reverseWordThree } from "../main";
-// import { Context as VMContext, VM } from "near-sdk-as";
+import { reverseWordOne, reverseWordTwo, reverseWordThree } from "..";
+// import { VMContext, VM } from "near-sdk-as";
 
 describe("04.  Cross-Contract Calls :: Sentences", () => {
   it("should reverse a sentence (one)", () => {
