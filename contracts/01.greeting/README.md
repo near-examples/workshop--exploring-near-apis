@@ -22,7 +22,7 @@ export function sayHello(): string;
 export function sayMyName(): string;
 ```
 
-- "Call" function (although it does NOT alter state, it DOES read from `context`, [see docs for details](https://docs.near.org/docs/roles/developer/contracts/assemblyscript#potential-gotchas))
+- "Call" function (although it does NOT alter state, it DOES read from `context`, [see docs for details](https://docs.near.org/docs/develop/contracts/as/intro))
 - Takes no parameters
 - Returns a string
 
@@ -516,4 +516,4 @@ We use `near-api-js` internally in tools like NEAR Shell and NEAR Wallet.
 
 You would use `near-api-js` as your primary interface with the NEAR platform anytime you are writing JavaScript (client or server-side).
 
-See our [documentation for more details](https://docs.near.org/docs/roles/developer/examples/near-api-js/introduction).
+See our [documentation for more details](https://docs.near.org/docs/develop/front-end/introduction).

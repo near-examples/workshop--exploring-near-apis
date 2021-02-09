@@ -20,7 +20,7 @@ Before diving into this workshop, have a look at the slides linked above.
 
 **Orientation**
 
-If you're totally new to NEAR you can [start here](https://docs.near.org/docs/quick-start/new-to-near) with a high level overview.
+If you're totally new to NEAR you can [start here](https://docs.near.org/docs/concepts/new-to-near) with a high level overview.
 
 NEAR Protocol (aka "NEAR") is a public peer-to-peer key-value database. Public as in open to everyone for reading anything and writing what you are allowed to. Write permissions are defined by access keys so only the owner of the data can give permissions to modify data they own.
 
@@ -122,7 +122,7 @@ _You can read [more about accounts here](https://docs.near.org/docs/concepts/acc
 - To call methods on deployed contracts we have a choice of tools and interfaces
   - RPC ([see here](https://docs.near.org/docs/interaction/rpc))
   - `near-api-js` ([see here](https://near.github.io/near-api-js/classes/_account_.account.html#functioncall))
-  - `NEAR Shell` ([see here](https://docs.near.org/docs/development/near-clitool))
+  - `NEAR Shell` ([see here](https://docs.near.org/docs/tools/near-cli))
 
 ## Activity::Client-Side Playground
 
